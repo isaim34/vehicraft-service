@@ -36,23 +36,6 @@ const Hero = () => {
               How It Works
             </Button>
           </div>
-          
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-8 max-w-3xl mx-auto text-center animate-fade-up delay-500">
-            {[
-              { number: "5,000+", label: "Jobs Completed" },
-              { number: "97%", label: "Satisfaction Rate" },
-              { number: "300+", label: "Freelance Mechanics" },
-            ].map((stat, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <span className="text-2xl md:text-3xl font-bold text-primary">
-                  {stat.number}
-                </span>
-                <span className="text-sm text-muted-foreground">
-                  {stat.label}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
       </Container>
       
