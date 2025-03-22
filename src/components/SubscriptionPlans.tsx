@@ -102,7 +102,7 @@ const SubscriptionPlans = () => {
             <Card 
               key={plan.id}
               className={`relative overflow-hidden transition-all ${
-                plan.popular ? 'border-primary shadow-md' : 'border-border'
+                plan.popular ? 'shadow-md' : 'border-border'
               }`}
             >
               {plan.popular && (
