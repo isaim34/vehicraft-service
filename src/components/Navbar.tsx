@@ -36,7 +36,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
             <ul className="flex space-x-6">
-              {["Services", "How It Works", "For Mechanics", "Testimonials"].map((item) => (
+              {["Services", "How It Works", "For Mechanics"].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
@@ -66,7 +66,7 @@ const Navbar = () => {
         <div className="md:hidden glass-effect absolute top-full left-0 right-0 py-4 animate-fade-down">
           <Container>
             <ul className="flex flex-col space-y-4 mb-4">
-              {["Services", "How It Works", "For Mechanics", "Testimonials"].map((item) => (
+              {["Services", "How It Works", "For Mechanics"].map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
