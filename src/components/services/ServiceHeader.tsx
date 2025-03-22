@@ -24,9 +24,11 @@ export const ServiceHeader = ({
         Our multi-market platform connects customers with freelance mechanics who provide 
         specialized on-demand mobile repair services wherever and whenever you need them.
       </p>
-      <p className="text-sm font-medium text-primary animate-fade-up delay-200 mb-6">
-        Free for customers, paid subscription for service providers
-      </p>
+      <div className="bg-primary/10 py-2 px-4 rounded-md inline-block mb-6 animate-fade-up delay-200">
+        <p className="font-semibold text-primary">
+          FREE for customers, PAID subscription for service providers
+        </p>
+      </div>
       
       <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-300">
         <Dialog>
