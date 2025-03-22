@@ -35,7 +35,7 @@ const services = [
   {
     title: "Tire Services",
     description: "Mobile tire rotation, balancing, repair, and replacement without the need to visit a shop.",
-    icon: Wrench
+    icon: WrenchIcon
   },
   {
     title: "Scheduled Maintenance",
@@ -73,9 +73,9 @@ const Services = () => {
     }
     
     if (userType === "customer") {
-      toast.success(`You've signed up to receive ${selectedService} services!`);
+      toast.success(`You've signed up to receive ${selectedService} services for free!`);
     } else {
-      toast.success(`You've signed up to offer ${selectedService} services!`);
+      toast.success(`You've signed up to offer ${selectedService} services! Please complete the payment process to activate your account.`);
     }
   };
 
@@ -89,6 +89,9 @@ const Services = () => {
           <p className="text-muted-foreground animate-fade-up delay-150 mb-6">
             Our multi-market platform connects customers with freelance mechanics who provide 
             specialized on-demand mobile repair services wherever and whenever you need them.
+          </p>
+          <p className="text-sm font-medium text-primary animate-fade-up delay-200 mb-6">
+            Free for customers, paid subscription for service providers
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-300">
@@ -130,6 +133,7 @@ const Services = () => {
                           <circle cx="9" cy="7" r="4" />
                         </svg>
                         Find a Service
+                        <span className="mt-1 text-xs text-green-600 font-medium">FREE</span>
                       </Label>
                     </div>
                     
@@ -155,6 +159,7 @@ const Services = () => {
                           <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                         </svg>
                         Offer a Service
+                        <span className="mt-1 text-xs text-blue-600 font-medium">SUBSCRIPTION</span>
                       </Label>
                     </div>
                   </RadioGroup>
@@ -178,9 +183,18 @@ const Services = () => {
                     </select>
                   </div>
                   
+                  {userType === "provider" && (
+                    <div className="p-3 bg-blue-50 dark:bg-blue-950 rounded-md text-sm">
+                      <p className="font-medium text-blue-700 dark:text-blue-300">Vendor Subscription Required</p>
+                      <p className="mt-1 text-blue-600 dark:text-blue-400">To offer services on our platform, you'll need to select a subscription plan after signup.</p>
+                    </div>
+                  )}
+                  
                   <DialogFooter>
                     <Button type="submit" className="w-full">
-                      Sign Up {userType === "provider" ? "to Offer Service" : "for Service"}
+                      {userType === "customer" 
+                        ? "Sign Up For Free" 
+                        : "Continue to Payment"}
                     </Button>
                   </DialogFooter>
                 </form>
@@ -199,8 +213,15 @@ const Services = () => {
                   </DialogDescription>
                 </DialogHeader>
                 <div className="space-y-4 py-4">
-                  <p>As a customer, you can find skilled mechanics near you for on-demand services.</p>
-                  <p>As a service provider, you can offer your skills and expertise to customers in your area.</p>
+                  <div className="p-4 bg-green-50 dark:bg-green-950 rounded-md">
+                    <h3 className="font-medium text-green-700 dark:text-green-300">For Customers</h3>
+                    <p className="mt-1 text-green-600 dark:text-green-400">Completely free to use! Find skilled mechanics near you for on-demand services with no subscription fees.</p>
+                  </div>
+                  
+                  <div className="p-4 bg-blue-50 dark:bg-blue-950 rounded-md">
+                    <h3 className="font-medium text-blue-700 dark:text-blue-300">For Service Providers</h3>
+                    <p className="mt-1 text-blue-600 dark:text-blue-400">Offer your skills and expertise to customers in your area with a subscription plan that gives you access to our marketplace.</p>
+                  </div>
                 </div>
                 <DialogFooter>
                   <Button variant="outline" onClick={() => toast.info("More information has been sent to your email")}>
@@ -249,7 +270,7 @@ const Services = () => {
                       </DialogHeader>
                       <div className="grid grid-cols-2 gap-4 py-4">
                         <Button
-                          onClick={() => toast.success(`You've signed up to receive ${service.title} services!`)}
+                          onClick={() => toast.success(`You've signed up to receive ${service.title} services for free!`)}
                           className="flex flex-col items-center justify-center gap-2 p-4 h-auto"
                         >
                           <svg
@@ -266,10 +287,11 @@ const Services = () => {
                             <circle cx="9" cy="7" r="4" />
                           </svg>
                           Request This Service
+                          <span className="text-xs font-medium text-green-600">FREE</span>
                         </Button>
                         <Button
                           variant="outline"
-                          onClick={() => toast.success(`You've signed up to offer ${service.title} services!`)}
+                          onClick={() => toast.success(`You've signed up to offer ${service.title} services! Please complete the payment process to activate your account.`)}
                           className="flex flex-col items-center justify-center gap-2 p-4 h-auto"
                         >
                           <svg
@@ -288,6 +310,7 @@ const Services = () => {
                             <path d="M16 3.13a4 4 0 0 1 0 7.75" />
                           </svg>
                           Offer This Service
+                          <span className="text-xs font-medium text-blue-600">SUBSCRIPTION</span>
                         </Button>
                       </div>
                     </DialogContent>
