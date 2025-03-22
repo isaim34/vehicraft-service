@@ -32,6 +32,11 @@ const Index = () => {
     return () => document.removeEventListener("click", handleAnchorClick);
   }, []);
 
+  // Update document title to emphasize multi-market, gig-based nature
+  useEffect(() => {
+    document.title = "AutoProNow | Multi-Market Gig-Based Mobile Repair Platform";
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />

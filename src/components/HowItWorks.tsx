@@ -8,22 +8,22 @@ const steps = [
   {
     number: "01",
     title: "Book Your Service",
-    description: "Select the service you need and choose a convenient time and location for your appointment.",
+    description: "Select the service you need and choose a convenient time and location for your appointment across any of our supported markets.",
   },
   {
     number: "02",
-    title: "Mechanic Confirmation",
-    description: "A qualified mobile mechanic in your area will confirm your booking and provide an estimated arrival time.",
+    title: "Gig Mechanic Acceptance",
+    description: "A qualified freelance mechanic in your area will accept your job request and provide an estimated arrival time.",
   },
   {
     number: "03",
     title: "Service at Your Location",
-    description: "The mechanic arrives at your location with all necessary tools and parts to complete the service.",
+    description: "The gig-based mechanic arrives at your location with all necessary tools and parts to complete the service.",
   },
   {
     number: "04",
     title: "Pay After Satisfaction",
-    description: "Once the work is completed to your satisfaction, make a secure payment through our platform.",
+    description: "Once the work is completed to your satisfaction, make a secure payment through our platform. The freelance mechanic receives their earnings immediately.",
   }
 ];
 
@@ -42,8 +42,8 @@ const HowItWorks = () => {
             How <span className="text-primary">AutoProNow</span> Works
           </h2>
           <p className="text-muted-foreground animate-fade-up delay-150">
-            Our streamlined process makes getting professional auto service easier than ever before.
-            Here's how we bring the auto shop to you.
+            Our multi-market, gig-based platform makes vehicle maintenance easier than ever.
+            Here's how we connect you with skilled freelance mechanics.
           </p>
         </div>
 

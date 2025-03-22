@@ -1,13 +1,19 @@
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
-import { Wrench, BarChart4, Clock, Calendar, Settings } from "lucide-react";
+import { Wrench, BarChart4, Clock, Calendar, Settings, Globe } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getStaggeredChildren } from "@/lib/animations";
 
 const services = [
   {
-    title: "Diagnostics & Repairs",
-    description: "Professional diagnosis and repair of mechanical and electrical issues, right where your vehicle is parked.",
+    title: "Multi-Market Platform",
+    description: "Our platform operates across multiple markets, connecting customers with skilled mechanics anywhere they're needed.",
+    icon: Globe
+  },
+  {
+    title: "Gig-Based Repairs",
+    description: "Freelance mechanics can join our platform, set their own schedule, and provide on-demand repair services in their local area.",
     icon: Wrench
   },
   {
@@ -40,11 +46,11 @@ const Services = () => {
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-up">
-            Professional Auto Services, <span className="text-primary">Delivered to You</span>
+            The <span className="text-primary">Gig-Economy</span> Revolution in Vehicle Maintenance
           </h2>
           <p className="text-muted-foreground animate-fade-up delay-150">
-            Our network of certified mobile mechanics provides a comprehensive range of services,
-            bringing professional auto care directly to your location.
+            Our multi-market platform connects customers with freelance mechanics who provide 
+            on-demand mobile repair services wherever and whenever you need them.
           </p>
         </div>
 
