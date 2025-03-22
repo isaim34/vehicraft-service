@@ -1,10 +1,8 @@
 
 import { Container } from "@/components/ui/container";
 import { Card } from "@/components/ui/card";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Button } from "@/components/ui/button";
-import { Label } from "@/components/ui/label";
-import { Check, InfoIcon } from "lucide-react";
+import { InfoIcon } from "lucide-react";
 import { useState } from "react";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
@@ -71,17 +69,15 @@ const SubscriptionPlans = () => {
           {plans.map((plan) => (
             <Card 
               key={plan.id}
-              className="relative overflow-hidden transition-all border-border"
+              className={`relative overflow-hidden transition-all border-border ${
+                selectedPlan === plan.id ? "ring-2 ring-primary" : ""
+              }`}
+              onClick={() => setSelectedPlan(plan.id)}
             >
               <div className="p-6">
-                <RadioGroup value={selectedPlan} onValueChange={setSelectedPlan} className="mb-4">
-                  <div className="flex items-center space-x-2">
-                    <RadioGroupItem value={plan.id} id={plan.id} />
-                    <Label htmlFor={plan.id} className="text-xl font-bold">
-                      {plan.name}
-                    </Label>
-                  </div>
-                </RadioGroup>
+                <div className="text-xl font-bold">
+                  {plan.name}
+                </div>
                 
                 <div className="mt-2">
                   <span className="text-3xl font-bold">${plan.price}</span>
