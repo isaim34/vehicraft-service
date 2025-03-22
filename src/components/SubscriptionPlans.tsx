@@ -24,7 +24,7 @@ const SubscriptionPlans = () => {
     {
       id: "monthly",
       name: "Monthly",
-      price: 19.99,
+      price: 35.00,
       duration: "1 month",
       features: [
         "Basic diagnostic checks",
@@ -36,9 +36,9 @@ const SubscriptionPlans = () => {
     {
       id: "quarterly",
       name: "Quarterly",
-      price: 54.99,
+      price: 31.50,
       duration: "3 months",
-      savings: "Save 8%",
+      savings: "Save 10%",
       features: [
         "All monthly plan features",
         "Free oil changes",
@@ -49,9 +49,9 @@ const SubscriptionPlans = () => {
     {
       id: "biannual",
       name: "Bi-Annual",
-      price: 99.99,
+      price: 29.75,
       duration: "6 months",
-      savings: "Save 16%",
+      savings: "Save 15%",
       popular: true,
       features: [
         "All quarterly plan features",
@@ -64,9 +64,9 @@ const SubscriptionPlans = () => {
     {
       id: "annual",
       name: "Annual",
-      price: 179.99,
+      price: 28.00,
       duration: "12 months",
-      savings: "Save 25%",
+      savings: "Save 20%",
       features: [
         "All bi-annual plan features",
         "Annual deep maintenance service",
