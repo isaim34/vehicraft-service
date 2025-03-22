@@ -4,8 +4,9 @@ import { Card } from "@/components/ui/card";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
-import { Check } from "lucide-react";
+import { Check, InfoIcon } from "lucide-react";
 import { useState } from "react";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface PlanOption {
   id: string;
@@ -88,13 +89,19 @@ const SubscriptionPlans = () => {
           <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             Select the plan that fits your needs. Subscribe for longer periods and save more.
           </p>
+          <div className="mt-4 flex items-center justify-center gap-2">
+            <div className="px-4 py-2 bg-yellow-100 dark:bg-yellow-900/30 text-yellow-800 dark:text-yellow-300 rounded-md text-sm inline-flex items-center">
+              <InfoIcon className="h-4 w-4 mr-2" />
+              Subscriptions coming soon! Pricing displayed for transparency.
+            </div>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {plans.map((plan) => (
             <Card 
               key={plan.id}
-              className={`relative overflow-hidden transition-all hover:shadow-lg ${
+              className={`relative overflow-hidden transition-all ${
                 plan.popular ? 'border-primary shadow-md' : 'border-border'
               }`}
             >
@@ -136,12 +143,24 @@ const SubscriptionPlans = () => {
                   ))}
                 </ul>
                 
-                <Button 
-                  className={`w-full mt-8 ${selectedPlan === plan.id ? '' : 'bg-muted text-muted-foreground hover:bg-muted/80'}`}
-                  variant={selectedPlan === plan.id ? "default" : "outline"}
-                >
-                  {selectedPlan === plan.id ? "Subscribe Now" : "Select Plan"}
-                </Button>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <div className="mt-8">
+                        <Button 
+                          className="w-full opacity-60 cursor-not-allowed"
+                          variant="outline"
+                          disabled
+                        >
+                          Coming Soon
+                        </Button>
+                      </div>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Subscriptions will be available soon!</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </div>
             </Card>
           ))}
