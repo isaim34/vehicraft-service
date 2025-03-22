@@ -5,13 +5,20 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Container } from "@/components/ui/container";
 import { Slider } from "@/components/ui/slider";
 import { useLocalStorage } from "@/hooks/use-local-storage";
-import { Check, Target } from "lucide-react";
+import { Check, Target, Lock } from "lucide-react";
 
 const ProgressTracker = () => {
   const [completionPercentage, setCompletionPercentage] = useLocalStorage<number>("app-completion", 0);
+  const [isAdmin, setIsAdmin] = useLocalStorage<boolean>("is-admin", false);
 
   const handleProgressChange = (value: number[]) => {
-    setCompletionPercentage(value[0]);
+    if (isAdmin) {
+      setCompletionPercentage(value[0]);
+    }
+  };
+
+  const toggleAdmin = () => {
+    setIsAdmin(!isAdmin);
   };
 
   return (
@@ -48,15 +55,24 @@ const ProgressTracker = () => {
               <Progress value={completionPercentage} className="h-3" />
               
               <div className="pt-1">
-                <p className="text-sm text-muted-foreground mb-2">
-                  Adjust the completion percentage:
-                </p>
+                <div className="flex justify-between items-center mb-2">
+                  <p className="text-sm text-muted-foreground">
+                    {isAdmin ? "Admin mode: Adjust the completion percentage" : "Progress is updated by administrators"}
+                  </p>
+                  {!isAdmin && (
+                    <span className="inline-flex items-center text-sm text-muted-foreground">
+                      <Lock className="h-3 w-3 mr-1" /> Locked
+                    </span>
+                  )}
+                </div>
                 <Slider
                   defaultValue={[completionPercentage]}
+                  value={[completionPercentage]}
                   max={100}
                   step={1}
                   onValueChange={handleProgressChange}
-                  className="mt-1"
+                  disabled={!isAdmin}
+                  className={`mt-1 ${!isAdmin ? 'opacity-70 cursor-not-allowed' : ''}`}
                 />
               </div>
 
@@ -77,6 +93,16 @@ const ProgressTracker = () => {
                   <p className="font-medium">Deployment</p>
                   <p className="text-xs text-muted-foreground">100%</p>
                 </div>
+              </div>
+              
+              {/* Hidden in production, for demo purposes only */}
+              <div className="mt-4 pt-3 border-t border-border">
+                <button 
+                  onClick={toggleAdmin}
+                  className="text-xs px-2 py-1 bg-muted hover:bg-muted/80 rounded text-muted-foreground transition-colors"
+                >
+                  {isAdmin ? "Disable Admin Mode" : "Enable Admin Mode"} (Demo Only)
+                </button>
               </div>
             </div>
           </CardContent>
