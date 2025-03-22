@@ -14,7 +14,6 @@ interface PlanOption {
   price: number;
   duration: string;
   savings?: string;
-  features: string[];
 }
 
 const SubscriptionPlans = () => {
@@ -26,12 +25,6 @@ const SubscriptionPlans = () => {
       name: "Monthly",
       price: 35.00,
       duration: "1 month",
-      features: [
-        "Basic diagnostic checks",
-        "Priority booking",
-        "24/7 roadside support",
-        "Monthly maintenance reminders"
-      ]
     },
     {
       id: "quarterly",
@@ -39,12 +32,6 @@ const SubscriptionPlans = () => {
       price: 31.50,
       duration: "3 months",
       savings: "Save 10%",
-      features: [
-        "All monthly plan features",
-        "Free oil changes",
-        "Tire rotation service",
-        "Quarterly vehicle inspection"
-      ]
     },
     {
       id: "biannual",
@@ -52,13 +39,6 @@ const SubscriptionPlans = () => {
       price: 29.75,
       duration: "6 months",
       savings: "Save 15%",
-      features: [
-        "All quarterly plan features",
-        "Free filter replacements",
-        "Brake system check",
-        "Semi-annual full vehicle inspection",
-        "Exclusive member discounts"
-      ]
     },
     {
       id: "annual",
@@ -66,14 +46,6 @@ const SubscriptionPlans = () => {
       price: 28.00,
       duration: "12 months",
       savings: "Save 20%",
-      features: [
-        "All bi-annual plan features",
-        "Annual deep maintenance service",
-        "Battery replacement discount",
-        "Free fluid top-ups all year",
-        "Priority emergency service",
-        "Dedicated service advisor"
-      ]
     }
   ];
 
@@ -121,15 +93,6 @@ const SubscriptionPlans = () => {
                     {plan.savings}
                   </span>
                 )}
-                
-                <ul className="mt-6 space-y-3">
-                  {plan.features.map((feature, index) => (
-                    <li key={index} className="flex items-start">
-                      <Check className="h-5 w-5 text-green-500 shrink-0 mr-2" />
-                      <span className="text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
                 
                 <TooltipProvider>
                   <Tooltip>
