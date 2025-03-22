@@ -15,7 +15,6 @@ interface PlanOption {
   duration: string;
   savings?: string;
   features: string[];
-  popular?: boolean;
 }
 
 const SubscriptionPlans = () => {
@@ -53,7 +52,6 @@ const SubscriptionPlans = () => {
       price: 29.75,
       duration: "6 months",
       savings: "Save 15%",
-      popular: true,
       features: [
         "All quarterly plan features",
         "Free filter replacements",
@@ -101,18 +99,8 @@ const SubscriptionPlans = () => {
           {plans.map((plan) => (
             <Card 
               key={plan.id}
-              className={`relative overflow-hidden transition-all ${
-                plan.popular ? 'shadow-md' : 'border-border'
-              }`}
+              className="relative overflow-hidden transition-all border-border"
             >
-              {plan.popular && (
-                <div className="absolute top-0 right-0">
-                  <div className="bg-primary text-primary-foreground text-xs font-medium py-1 px-3 rounded-bl-md">
-                    Most Popular
-                  </div>
-                </div>
-              )}
-              
               <div className="p-6">
                 <RadioGroup value={selectedPlan} onValueChange={setSelectedPlan} className="mb-4">
                   <div className="flex items-center space-x-2">
