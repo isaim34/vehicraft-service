@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
 import SubscriptionPlans from "@/components/SubscriptionPlans";
 import ProgressTracker from "@/components/ProgressTracker";
+import EmailSubscription from "@/components/EmailSubscription";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -39,6 +40,7 @@ const Index = () => {
         <Services />
         <HowItWorks />
         <ProgressTracker />
+        <EmailSubscription />
         <SubscriptionPlans />
       </main>
       <Footer />
