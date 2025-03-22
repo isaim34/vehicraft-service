@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
-import { Wrench, BarChart4, Clock, Calendar, Settings, Globe, Car, Truck, Spray, Battery, Tools, Wrench as WrenchIcon } from "lucide-react";
+import { Wrench, BarChart4, Clock, Calendar, Settings, Globe, Car, Truck, Droplets, Battery, Tool, Wrench as WrenchIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getStaggeredChildren } from "@/lib/animations";
 
@@ -19,7 +19,7 @@ const services = [
   {
     title: "Mobile Detailing",
     description: "Premium car washing, waxing, and interior detailing services that come to your home or office.",
-    icon: Spray
+    icon: Droplets
   },
   {
     title: "Battery Replacement",
@@ -29,7 +29,7 @@ const services = [
   {
     title: "Tire Services",
     description: "Mobile tire rotation, balancing, repair, and replacement without the need to visit a shop.",
-    icon: Tools
+    icon: Tool
   },
   {
     title: "Scheduled Maintenance",
