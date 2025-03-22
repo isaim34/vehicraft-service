@@ -4,7 +4,7 @@ import { Container } from "@/components/ui/container";
 import { Dialog } from "@/components/ui/dialog";
 import { ServiceHeader } from "./services/ServiceHeader";
 import { servicesData } from "./services/servicesData";
-import { Shield, Clock, DollarSign, Map, Smartphone, Users, Award } from "lucide-react";
+import { Shield, Clock, DollarSign, Map, Smartphone, Users, MessageCircle } from "lucide-react";
 
 const Services = () => {
   const [selectedService, setSelectedService] = useState<string | null>(null);
@@ -41,9 +41,9 @@ const Services = () => {
       description: "Support independent mechanics who earn more than at dealerships, creating a sustainable ecosystem."
     },
     {
-      icon: Award,
-      title: "Quality Guarantee",
-      description: "Every repair comes with a satisfaction guarantee, outperforming traditional repair shops."
+      icon: MessageCircle,
+      title: "Direct Communication",
+      description: "Mechanics and customers can communicate directly in real-time, eliminating middlemen and miscommunication."
     }
   ];
 
