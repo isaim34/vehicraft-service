@@ -2,6 +2,7 @@
 import { Container } from "@/components/ui/container";
 import { cn } from "@/lib/utils";
 import { getStaggeredChildren } from "@/lib/animations";
+import { Wrench } from "lucide-react"; // Replace Tools with Wrench which is available
 
 const steps = [
   {
