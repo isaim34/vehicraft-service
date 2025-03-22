@@ -1,40 +1,55 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
-import { Wrench, BarChart4, Clock, Calendar, Settings, Globe } from "lucide-react";
+import { Wrench, BarChart4, Clock, Calendar, Settings, Globe, Car, Truck, Spray, Battery, Tools, Wrench as WrenchIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getStaggeredChildren } from "@/lib/animations";
 
 const services = [
   {
-    title: "Multi-Market Platform",
-    description: "Our platform operates across multiple markets, connecting customers with skilled mechanics anywhere they're needed.",
-    icon: Globe
+    title: "Automotive Repair",
+    description: "Professional mechanics provide on-demand repair services for cars, SUVs, and light trucks at your location.",
+    icon: Car
   },
   {
-    title: "Gig-Based Repairs",
-    description: "Freelance mechanics can join our platform, set their own schedule, and provide on-demand repair services in their local area.",
-    icon: Wrench
+    title: "Diesel Engine Service",
+    description: "Specialized technicians for heavy-duty diesel engines in trucks, generators, and agricultural equipment.",
+    icon: Truck
   },
   {
-    title: "Routine Maintenance",
-    description: "Regular services including oil changes, filter replacements, and fluid checks to keep your vehicle running smoothly.",
-    icon: Settings
+    title: "Mobile Detailing",
+    description: "Premium car washing, waxing, and interior detailing services that come to your home or office.",
+    icon: Spray
   },
   {
-    title: "Performance Tuning",
-    description: "Optimize your vehicle's performance with expert tuning and upgrades tailored to your specific needs.",
-    icon: BarChart4
+    title: "Battery Replacement",
+    description: "Emergency and scheduled battery testing, jump-starts, and replacement services wherever you're stranded.",
+    icon: Battery
   },
   {
-    title: "Emergency Services",
-    description: "Fast response to breakdowns and urgent repairs to get you back on the road as quickly as possible.",
-    icon: Clock
+    title: "Tire Services",
+    description: "Mobile tire rotation, balancing, repair, and replacement without the need to visit a shop.",
+    icon: Tools
   },
   {
     title: "Scheduled Maintenance",
-    description: "Book regular maintenance in advance to ensure your vehicle stays in optimal condition year-round.",
+    description: "Book regular maintenance in advance with qualified freelance mechanics for optimal vehicle performance.",
     icon: Calendar
+  },
+  {
+    title: "Electronics Diagnostics",
+    description: "Expert diagnostics and repair of vehicle computer systems, sensors, and electronic components.",
+    icon: Settings
+  },
+  {
+    title: "Emergency Roadside Help",
+    description: "Fast response to breakdowns and urgent repairs from nearby gig mechanics to get you back on the road quickly.",
+    icon: Clock
+  },
+  {
+    title: "Multi-Market Platform",
+    description: "Our platform connects customers with skilled freelance mechanics across multiple regions and service categories.",
+    icon: Globe
   }
 ];
 
@@ -50,7 +65,7 @@ const Services = () => {
           </h2>
           <p className="text-muted-foreground animate-fade-up delay-150">
             Our multi-market platform connects customers with freelance mechanics who provide 
-            on-demand mobile repair services wherever and whenever you need them.
+            specialized on-demand mobile repair services wherever and whenever you need them.
           </p>
         </div>
 
