@@ -44,11 +44,11 @@ const ProgressTracker = () => {
             </div>
           </CardHeader>
           <CardContent>
-            <div className="space-y-6">
+            <div className="space-y-4"> {/* Reduced vertical spacing */}
               <Progress value={completionPercentage} className="h-3" />
               
-              <div className="pt-4">
-                <p className="text-sm text-muted-foreground mb-4">
+              <div className="pt-2"> {/* Reduced top padding */}
+                <p className="text-sm text-muted-foreground mb-2"> {/* Reduced bottom margin */}
                   Adjust the completion percentage:
                 </p>
                 <Slider
