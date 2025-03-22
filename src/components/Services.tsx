@@ -1,7 +1,6 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
-import { Wrench, BarChart4, Clock, ShieldCheck, Calendar, Settings } from "lucide-react";
+import { Wrench, BarChart4, Clock, Calendar, Settings } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getStaggeredChildren } from "@/lib/animations";
 
@@ -25,11 +24,6 @@ const services = [
     title: "Emergency Services",
     description: "Fast response to breakdowns and urgent repairs to get you back on the road as quickly as possible.",
     icon: Clock
-  },
-  {
-    title: "Warranty Work",
-    description: "Factory-authorized service maintaining your vehicle's warranty with genuine parts and qualified technicians.",
-    icon: ShieldCheck
   },
   {
     title: "Scheduled Maintenance",
