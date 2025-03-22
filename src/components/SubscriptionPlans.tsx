@@ -12,6 +12,7 @@ interface PlanOption {
   price: number;
   duration: string;
   savings?: string;
+  totalPrice?: number;
 }
 
 const SubscriptionPlans = () => {
@@ -23,6 +24,7 @@ const SubscriptionPlans = () => {
       name: "Monthly",
       price: 35.00,
       duration: "1 month",
+      totalPrice: 35.00
     },
     {
       id: "quarterly",
@@ -30,6 +32,7 @@ const SubscriptionPlans = () => {
       price: 31.50,
       duration: "3 months",
       savings: "Save 10%",
+      totalPrice: 94.50
     },
     {
       id: "biannual",
@@ -37,6 +40,7 @@ const SubscriptionPlans = () => {
       price: 29.75,
       duration: "6 months",
       savings: "Save 15%",
+      totalPrice: 178.50
     },
     {
       id: "annual",
@@ -44,6 +48,7 @@ const SubscriptionPlans = () => {
       price: 28.00,
       duration: "12 months",
       savings: "Save 20%",
+      totalPrice: 336.00
     }
   ];
 
@@ -63,6 +68,12 @@ const SubscriptionPlans = () => {
               Subscriptions coming soon! Pricing displayed for transparency.
             </div>
           </div>
+        </div>
+
+        <div className="mb-4 text-center">
+          <p className="text-sm font-medium text-blue-700 dark:text-blue-300 bg-blue-50 dark:bg-blue-900/30 py-2 px-4 rounded-md inline-block">
+            All plans are billed upfront for the full duration with discounts applied
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -88,6 +99,12 @@ const SubscriptionPlans = () => {
                   <span className="inline-block bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 text-xs px-2 py-1 rounded mt-2">
                     {plan.savings}
                   </span>
+                )}
+
+                {plan.totalPrice && (
+                  <div className="mt-3 text-sm font-medium">
+                    Total: ${plan.totalPrice.toFixed(2)} upfront
+                  </div>
                 )}
                 
                 <TooltipProvider>
