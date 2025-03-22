@@ -4,6 +4,12 @@ import { Container } from "@/components/ui/container";
 import { Wrench, BarChart4, Clock, Calendar, Settings, Globe, Car, Truck, Droplets, Battery, Wrench as WrenchIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { getStaggeredChildren } from "@/lib/animations";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { useState } from "react";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { toast } from "sonner";
 
 const services = [
   {
@@ -55,6 +61,23 @@ const services = [
 
 const Services = () => {
   const staggeredItems = getStaggeredChildren(services.length);
+  const [userType, setUserType] = useState<"customer" | "provider">("customer");
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+
+  const handleSignup = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!selectedService) {
+      toast.error("Please select a service");
+      return;
+    }
+    
+    if (userType === "customer") {
+      toast.success(`You've signed up to receive ${selectedService} services!`);
+    } else {
+      toast.success(`You've signed up to offer ${selectedService} services!`);
+    }
+  };
 
   return (
     <section id="services" className="py-20 relative">
@@ -63,10 +86,130 @@ const Services = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-fade-up">
             The <span className="text-primary">Gig-Economy</span> Revolution in Vehicle Maintenance
           </h2>
-          <p className="text-muted-foreground animate-fade-up delay-150">
+          <p className="text-muted-foreground animate-fade-up delay-150 mb-6">
             Our multi-market platform connects customers with freelance mechanics who provide 
             specialized on-demand mobile repair services wherever and whenever you need them.
           </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up delay-300">
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button>Sign Up for Services</Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle>Sign Up</DialogTitle>
+                  <DialogDescription>
+                    Select how you want to join our platform
+                  </DialogDescription>
+                </DialogHeader>
+                
+                <form onSubmit={handleSignup} className="grid gap-6 py-4">
+                  <RadioGroup 
+                    defaultValue="customer"
+                    onValueChange={(value) => setUserType(value as "customer" | "provider")}
+                    className="grid grid-cols-2 gap-4"
+                  >
+                    <div>
+                      <RadioGroupItem value="customer" id="customer" className="peer sr-only" />
+                      <Label
+                        htmlFor="customer"
+                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="mb-3 h-6 w-6"
+                        >
+                          <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                          <circle cx="9" cy="7" r="4" />
+                        </svg>
+                        Find a Service
+                      </Label>
+                    </div>
+                    
+                    <div>
+                      <RadioGroupItem value="provider" id="provider" className="peer sr-only" />
+                      <Label
+                        htmlFor="provider"
+                        className="flex flex-col items-center justify-between rounded-md border-2 border-muted bg-popover p-4 hover:bg-accent hover:text-accent-foreground peer-data-[state=checked]:border-primary [&:has([data-state=checked])]:border-primary"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="mb-3 h-6 w-6"
+                        >
+                          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                          <circle cx="9" cy="7" r="4" />
+                          <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                          <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                        </svg>
+                        Offer a Service
+                      </Label>
+                    </div>
+                  </RadioGroup>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="service" className="text-sm font-medium">
+                      Select a service {userType === "customer" ? "you need" : "you can provide"}:
+                    </Label>
+                    <select 
+                      id="service" 
+                      className="w-full p-2 border rounded-md bg-background"
+                      onChange={(e) => setSelectedService(e.target.value)}
+                      required
+                    >
+                      <option value="">Select a service</option>
+                      {services.map((service) => (
+                        <option key={service.title} value={service.title}>
+                          {service.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                  
+                  <DialogFooter>
+                    <Button type="submit" className="w-full">
+                      Sign Up {userType === "provider" ? "to Offer Service" : "for Service"}
+                    </Button>
+                  </DialogFooter>
+                </form>
+              </DialogContent>
+            </Dialog>
+            
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button variant="outline">Learn More</Button>
+              </DialogTrigger>
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Join Our Platform</DialogTitle>
+                  <DialogDescription>
+                    AutoProNow connects skilled mechanics with customers who need auto services.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="space-y-4 py-4">
+                  <p>As a customer, you can find skilled mechanics near you for on-demand services.</p>
+                  <p>As a service provider, you can offer your skills and expertise to customers in your area.</p>
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => toast.info("More information has been sent to your email")}>
+                    Request Information
+                  </Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -88,9 +231,67 @@ const Services = () => {
                   <CardTitle className="text-xl">{service.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className="text-muted-foreground text-sm">
+                  <CardDescription className="text-muted-foreground text-sm mb-4">
                     {service.description}
                   </CardDescription>
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Button variant="outline" size="sm" className="w-full">
+                        Sign Up for {service.title}
+                      </Button>
+                    </DialogTrigger>
+                    <DialogContent>
+                      <DialogHeader>
+                        <DialogTitle>Sign Up for {service.title}</DialogTitle>
+                        <DialogDescription>
+                          Choose how you want to participate
+                        </DialogDescription>
+                      </DialogHeader>
+                      <div className="grid grid-cols-2 gap-4 py-4">
+                        <Button
+                          onClick={() => toast.success(`You've signed up to receive ${service.title} services!`)}
+                          className="flex flex-col items-center justify-center gap-2 p-4 h-auto"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-6 w-6"
+                          >
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                          </svg>
+                          Request This Service
+                        </Button>
+                        <Button
+                          variant="outline"
+                          onClick={() => toast.success(`You've signed up to offer ${service.title} services!`)}
+                          className="flex flex-col items-center justify-center gap-2 p-4 h-auto"
+                        >
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="h-6 w-6"
+                          >
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                            <circle cx="9" cy="7" r="4" />
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                          </svg>
+                          Offer This Service
+                        </Button>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                 </CardContent>
               </Card>
             );
