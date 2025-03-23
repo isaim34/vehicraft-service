@@ -15,7 +15,7 @@ export const LearnMoreDialog = () => {
       <DialogHeader>
         <DialogTitle>Join Our Platform</DialogTitle>
         <DialogDescription>
-          AutoProNow connects skilled mechanics with customers who need auto services.
+          Mobex connects skilled mechanics with customers who need auto services.
         </DialogDescription>
       </DialogHeader>
       <div className="space-y-4 py-4">

@@ -23,7 +23,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto animate-fade-up delay-150">
-            AutoProNow connects skilled freelance mechanics with customers across multiple markets.
+            Mobex connects skilled freelance mechanics with customers across multiple markets.
             Join the gig economy revolution in vehicle maintenance and repair services.
           </p>
           
