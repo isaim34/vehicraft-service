@@ -105,7 +105,17 @@ export default {
 				'pulse-subtle': {
 					'0%, 100%': { opacity: '1' },
 					'50%': { opacity: '0.8' }
-				}
+				},
+                'glow': {
+                    '0%, 100%': { 
+                        'box-shadow': '0 0 5px hsl(var(--primary))',
+                        'border-color': 'hsl(var(--primary) / 0.3)'
+                    },
+                    '50%': { 
+                        'box-shadow': '0 0 20px hsl(var(--primary))', 
+                        'border-color': 'hsl(var(--primary) / 0.6)'
+                    }
+                }
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -115,8 +125,13 @@ export default {
 				'fade-down': 'fade-down 0.5s ease-out',
 				'slide-in-right': 'slide-in-right 0.5s ease-out',
 				'slide-in-left': 'slide-in-left 0.5s ease-out',
-				'pulse-subtle': 'pulse-subtle 3s infinite ease-in-out'
-			}
+				'pulse-subtle': 'pulse-subtle 3s infinite ease-in-out',
+                'glow': 'glow 3s infinite ease-in-out'
+			},
+            backgroundImage: {
+                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                'hero-pattern': 'linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("/lovable-uploads/def26d1f-8314-40f2-9df8-3ff6870435d7.png")'
+            }
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
