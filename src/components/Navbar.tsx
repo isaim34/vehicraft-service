@@ -1,6 +1,5 @@
 
 import { useState, useEffect } from "react";
-import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -49,7 +48,6 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <Button size="sm">Book A Service</Button>
           </div>
 
           {/* Mobile Navigation Toggle */}
@@ -67,7 +65,7 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden glass-effect absolute top-full left-0 right-0 py-4 animate-fade-down">
           <Container>
-            <ul className="flex flex-col space-y-4 mb-4">
+            <ul className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <li key={item}>
                   <a
@@ -80,7 +78,6 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <Button className="w-full">Book A Service</Button>
           </Container>
         </div>
       )}
@@ -89,4 +86,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
