@@ -18,6 +18,8 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navItems = ["Services", "How It Works", "For Mechanics", "Subscription Plans"];
+
   return (
     <header
       className={cn(
@@ -36,7 +38,7 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-8">
             <ul className="flex space-x-6">
-              {["Services", "How It Works", "For Mechanics", "Subscription Plans"].map((item) => (
+              {navItems.map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
@@ -66,7 +68,7 @@ const Navbar = () => {
         <div className="md:hidden glass-effect absolute top-full left-0 right-0 py-4 animate-fade-down">
           <Container>
             <ul className="flex flex-col space-y-4 mb-4">
-              {["Services", "How It Works", "For Mechanics", "Subscription Plans"].map((item) => (
+              {navItems.map((item) => (
                 <li key={item}>
                   <a
                     href={`#${item.toLowerCase().replace(/\s+/g, "-")}`}
@@ -87,3 +89,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
