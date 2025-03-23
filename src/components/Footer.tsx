@@ -14,7 +14,7 @@ const Footer = () => {
           <div>
             <h3 className="text-primary font-bold text-2xl mb-4">AutoProNow</h3>
             <p className="text-muted-foreground mb-6">
-              Connecting vehicle owners with skilled mobile mechanics for on-demand repair and maintenance services.
+              The leading platform connecting vehicle owners with skilled mobile mechanics for on-demand repair and maintenance services at your location.
             </p>
             <div className="flex space-x-4">
               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, index) => (
@@ -26,11 +26,17 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold text-lg mb-4">Services</h4>
+            <h4 className="font-semibold text-lg mb-4">Mobile Repair Services</h4>
             <ul className="space-y-3">
-              {["Diagnostics & Repairs", "Routine Maintenance", "Performance Tuning", "Emergency Services", "Warranty Work"].map((service, index) => (
+              {[
+                "Mobile Diagnostics & Repairs", 
+                "On-Site Oil Changes", 
+                "Mobile Brake Service", 
+                "At-Home Battery Replacement", 
+                "Emergency Roadside Repair"
+              ].map((service, index) => (
                 <li key={index}>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a href="#mobile-repair-services" className="text-muted-foreground hover:text-primary transition-colors">
                     {service}
                   </a>
                 </li>
@@ -39,11 +45,17 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold text-lg mb-4">Company</h4>
+            <h4 className="font-semibold text-lg mb-4">For Mechanics & Customers</h4>
             <ul className="space-y-3">
-              {["About Us", "For Mechanics", "Careers", "Blog", "FAQs"].map((item, index) => (
+              {[
+                "Mechanic Registration", 
+                "Customer Reviews", 
+                "Freelance Opportunities", 
+                "Service Area Lookup", 
+                "FAQs"
+              ].map((item, index) => (
                 <li key={index}>
-                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                  <a href={`#${item.toLowerCase().replace(/\s+/g, "-")}`} className="text-muted-foreground hover:text-primary transition-colors">
                     {item}
                   </a>
                 </li>
@@ -52,7 +64,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold text-lg mb-4">Contact</h4>
+            <h4 className="font-semibold text-lg mb-4">Contact Your Mobile Mechanic</h4>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
@@ -80,7 +92,7 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} AutoProNow. All rights reserved.
+            © {currentYear} AutoProNow - Mobile Mechanic Services. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
@@ -90,7 +102,7 @@ const Footer = () => {
               Terms of Service
             </a>
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
-              Cookies Policy
+              Service Areas
             </a>
           </div>
         </div>

@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -31,9 +32,9 @@ const Index = () => {
     return () => document.removeEventListener("click", handleAnchorClick);
   }, []);
 
-  // Update document title to emphasize multi-market, gig-based nature
+  // Update document title with SEO-friendly keywords for mobile mechanics
   useEffect(() => {
-    document.title = "AutoProNow | Multi-Market Gig-Based Mobile Repair Platform";
+    document.title = "AutoProNow | Mobile Mechanics On Demand | Car Repair At Your Location";
   }, []);
 
   return (

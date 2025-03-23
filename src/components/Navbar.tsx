@@ -17,7 +17,12 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["Services", "How It Works", "For Mechanics", "Subscription Plans"];
+  const navItems = [
+    "Mobile Repair Services", 
+    "How It Works", 
+    "For Mechanics", 
+    "Subscription Plans"
+  ];
 
   return (
     <header
@@ -30,7 +35,7 @@ const Navbar = () => {
     >
       <Container>
         <nav className="flex items-center justify-between">
-          <a href="/" className="flex items-center space-x-2">
+          <a href="/" className="flex items-center space-x-2" aria-label="AutoProNow Mobile Mechanics">
             <span className="text-2xl font-bold text-primary">AutoProNow</span>
           </a>
 
