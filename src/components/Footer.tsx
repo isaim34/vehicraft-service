@@ -1,7 +1,7 @@
 
 import { Container } from "@/components/ui/container";
 import { Separator } from "@/components/ui/separator";
-import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -48,10 +48,9 @@ const Footer = () => {
             <h4 className="font-semibold text-lg mb-4">For Mechanics & Customers</h4>
             <ul className="space-y-3">
               {[
-                "Mechanic Registration", 
+                "Mechanic Pre-Registration", 
                 "Customer Reviews", 
                 "Freelance Opportunities", 
-                "Service Area Lookup", 
                 "FAQs"
               ].map((item, index) => (
                 <li key={index}>
@@ -70,12 +69,6 @@ const Footer = () => {
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-muted-foreground">
                   Austin, TX
-                </span>
-              </li>
-              <li className="flex items-center space-x-3">
-                <Phone className="h-5 w-5 text-primary shrink-0" />
-                <span className="text-muted-foreground">
-                  Call or text for service
                 </span>
               </li>
               <li className="flex items-center space-x-3">
