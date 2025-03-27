@@ -64,25 +64,28 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold text-lg mb-4">Contact Your Mobile Mechanic</h4>
+            <h4 className="font-semibold text-lg mb-4">Company Information</h4>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 text-primary shrink-0 mt-0.5" />
                 <span className="text-muted-foreground">
-                  123 Repair Street, Auto City, AC 12345
+                  Austin, TX
                 </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-primary shrink-0" />
-                <a href="tel:+11234567890" className="text-muted-foreground hover:text-primary transition-colors">
-                  (123) 456-7890
-                </a>
+                <span className="text-muted-foreground">
+                  Call or text for service
+                </span>
               </li>
               <li className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-primary shrink-0" />
-                <a href="mailto:info@mobex.com" className="text-muted-foreground hover:text-primary transition-colors">
-                  info@mobex.com
+                <a href="mailto:hello@tryviafix.com" className="text-muted-foreground hover:text-primary transition-colors">
+                  hello@tryviafix.com
                 </a>
+              </li>
+              <li className="mt-4 text-muted-foreground">
+                <p>Mobex - Mobile mechanics on demand, bringing expert auto repair services to your location throughout the Austin metropolitan area.</p>
               </li>
             </ul>
           </div>
