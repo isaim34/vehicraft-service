@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogTrigger } from "@/components/ui/dialog";
 import { SignupDialog } from "./services/SignupDialog";
-import { Wrench, Tool, CreditCard, CalendarCheck } from "lucide-react";
+import { Wrench, Hammer, CreditCard, CalendarCheck } from "lucide-react";
 
 const ForMechanics = () => {
   return (
@@ -26,7 +26,7 @@ const ForMechanics = () => {
           </div>
 
           <div className="bg-background rounded-lg p-6 shadow-sm">
-            <Tool className="h-10 w-10 text-primary mb-4" />
+            <Hammer className="h-10 w-10 text-primary mb-4" />
             <h3 className="font-semibold text-lg mb-2">Choose Your Services</h3>
             <p className="text-muted-foreground">
               Offer only the services you excel at. Specialize in your areas of expertise.
