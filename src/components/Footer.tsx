@@ -46,13 +46,7 @@ const Footer = () => {
           
           <div>
             <h4 className="font-semibold text-lg mb-4">For Mechanics</h4>
-            <p className="text-muted-foreground mb-3">
-              ViaFix empowers independent mechanics to grow their business. Set your own prices, choose your services, handle your payments, and create your own job offers.
-            </p>
-            <p className="text-muted-foreground mb-3">
-              We provide a platform for you to remain independent while increasing your clientele on the road. ASE certifications preferred with at least 3 years of verifiable experience required.
-            </p>
-            <ul className="space-y-3 mt-4">
+            <ul className="space-y-3">
               <li>
                 <a href="#mechanic-pre-registration" className="text-muted-foreground hover:text-primary transition-colors">
                   Mechanic Pre-Registration

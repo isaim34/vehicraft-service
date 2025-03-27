@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import HowItWorks from "@/components/HowItWorks";
+import ForMechanics from "@/components/ForMechanics";
 import SubscriptionPlans from "@/components/SubscriptionPlans";
 import ProgressTracker from "@/components/ProgressTracker";
 import EmailSubscription from "@/components/EmailSubscription";
@@ -44,6 +45,7 @@ const Index = () => {
         <Hero />
         <Services />
         <HowItWorks />
+        <ForMechanics />
         <SubscriptionPlans />
         <ProgressTracker />
         <EmailSubscription />
