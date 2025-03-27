@@ -12,7 +12,7 @@ const Footer = () => {
       <Container>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <h3 className="text-primary font-bold text-2xl mb-4">Mobex</h3>
+            <h3 className="text-primary font-bold text-2xl mb-4">ViaFix</h3>
             <p className="text-muted-foreground mb-6">
               The leading platform connecting vehicle owners with skilled mobile mechanics for on-demand repair and maintenance services at your location.
             </p>
@@ -78,7 +78,7 @@ const Footer = () => {
                 </a>
               </li>
               <li className="mt-4 text-muted-foreground">
-                <p>Mobex - Mobile mechanics on demand, bringing expert auto repair services to your location throughout the Austin metropolitan area.</p>
+                <p>ViaFix - Mobile mechanics on demand, bringing expert auto repair services to your location throughout the Austin metropolitan area.</p>
               </li>
             </ul>
           </div>
@@ -88,7 +88,7 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} Mobex - Mobile Mechanic Services. All rights reserved.
+            © {currentYear} ViaFix - Mobile Mechanic Services. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-4 text-sm">
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors">

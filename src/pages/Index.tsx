@@ -34,7 +34,7 @@ const Index = () => {
 
   // Update document title with SEO-friendly keywords for mobile mechanics
   useEffect(() => {
-    document.title = "Mobex | Mobile Mechanics On Demand | Car Repair At Your Location";
+    document.title = "ViaFix | Mobile Mechanics On Demand | Car Repair At Your Location";
   }, []);
 
   return (

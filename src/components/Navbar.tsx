@@ -35,8 +35,8 @@ const Navbar = () => {
     >
       <Container>
         <nav className="flex items-center justify-between">
-          <a href="/" className="flex items-center space-x-2" aria-label="Mobex Mobile Mechanics">
-            <span className="text-2xl font-bold text-primary">Mobex</span>
+          <a href="/" className="flex items-center space-x-2" aria-label="ViaFix Mobile Mechanics">
+            <span className="text-2xl font-bold text-primary">ViaFix</span>
           </a>
 
           {/* Desktop Navigation */}
