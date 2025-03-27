@@ -59,7 +59,7 @@ const SubscriptionPlans = () => {
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
             Choose Your Subscription
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="mt-4 text-lg text-gray-800 dark:text-gray-200 max-w-2xl mx-auto">
             Select the plan that fits your needs. Subscribe for longer periods and save more.
           </p>
           <div className="mt-4 flex items-center justify-center gap-2">
