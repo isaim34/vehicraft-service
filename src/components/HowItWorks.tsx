@@ -8,7 +8,7 @@ const steps = [
   {
     number: "01",
     title: "Book Your Service",
-    description: "Select the service you need and choose a convenient time and location for your appointment across any of our supported markets.",
+    description: "Select any service provider in your area, coordinate a convenient time, and have any repair or maintenance done regardless of the service market you're seeking assistance for.",
   },
   {
     number: "02",
