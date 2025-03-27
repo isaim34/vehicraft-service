@@ -45,20 +45,29 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-semibold text-lg mb-4">For Mechanics & Customers</h4>
-            <ul className="space-y-3">
-              {[
-                "Mechanic Pre-Registration", 
-                "Customer Reviews", 
-                "Freelance Opportunities", 
-                "FAQs"
-              ].map((item, index) => (
-                <li key={index}>
-                  <a href={`#${item.toLowerCase().replace(/\s+/g, "-")}`} className="text-muted-foreground hover:text-primary transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+            <h4 className="font-semibold text-lg mb-4">For Mechanics</h4>
+            <p className="text-muted-foreground mb-3">
+              ViaFix empowers independent mechanics to grow their business. Set your own prices, choose your services, handle your payments, and create your own job offers.
+            </p>
+            <p className="text-muted-foreground mb-3">
+              We provide a platform for you to remain independent while increasing your clientele on the road. ASE certifications preferred with at least 3 years of verifiable experience required.
+            </p>
+            <ul className="space-y-3 mt-4">
+              <li>
+                <a href="#mechanic-pre-registration" className="text-muted-foreground hover:text-primary transition-colors">
+                  Mechanic Pre-Registration
+                </a>
+              </li>
+              <li>
+                <a href="#freelance-opportunities" className="text-muted-foreground hover:text-primary transition-colors">
+                  Freelance Opportunities
+                </a>
+              </li>
+              <li>
+                <a href="#faqs" className="text-muted-foreground hover:text-primary transition-colors">
+                  FAQs
+                </a>
+              </li>
             </ul>
           </div>
           
