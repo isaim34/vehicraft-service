@@ -23,7 +23,7 @@ const steps = [
   {
     number: "04",
     title: "Pay After Satisfaction",
-    description: "Once the work is completed to your satisfaction, make a secure payment through our platform. The freelance mechanic receives their earnings immediately.",
+    description: "Once the work is completed to your satisfaction, pay the freelance mechanic directly. We keep our hands out of anyone's pockets, eliminating middlemen and maximizing value for both customers and service providers.",
   }
 ];
 
